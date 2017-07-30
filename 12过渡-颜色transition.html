@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 过渡</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F7F7F7;
+      /*background-image: linear-gradient(*/
+              /*45deg,*/
+              /*black 25%,*/
+              /*transparent 25%,*/
+              /*transparent 50%,*/
+              /*black 50%,*/
+              /*black 75%,*/
+              /*transparent 75%*/
+      /*);*/
+      /*background-size: 100px 100px;*/
+      /*animation:animate 1s infinite linear ;*/
+    /*}*/
+
+    /*@keyframes animate {*/
+      /*from{*/
+
+      /*}*/
+      /*to{*/
+        /*background-position: 100px 0;*/
+      /*}*/
+    }
+    .dv{
+      margin: 50px auto 0;
+      width: 1180px;
+      height: 560px;
+      background-color:pink;
+      opacity: 0;
+      transition: all 4s;
+      border-style: solid;
+      border-image-source:url("borderImages/border_image_5.png");
+      border-image-slice: 33;
+      border-image-repeat: round;
+      border-image-width: 33px;
+      box-sizing: content-box;
+    }
+
+    .transition {
+      content: "";
+      width: 200px;
+      height: 200px;
+      margin: 40px 47px;
+      background-color: darkgray;
+      /*颜色变化*/
+      color: rgba(0,0,0,0);
+      transition: all 2s;
+      text-align: center;
+      line-height: 200px;
+      text-align: center;
+      border-radius: 100px;
+      box-shadow: 0 0 5px red;
+      font-size: 40px;
+      text-shadow: 0 0 0px ;
+      float: left;
+      /*opacity: 0;*/
+    }
+
+    .transition:hover{
+      background-color:pink;
+      text-shadow: 2px 2px 5px red;
+     color: black ;
+      opacity: 1;
+      transform: rotate(360deg);
+    }
+    .dv:hover{
+      opacity: 1;
+    }
+
+    .dv:nth-child(2){
+      width: 900px;
+      height: 800px;
+      position: relative;
+
+    }
+    .dv:nth-child(2) div{
+
+      width: 200px;
+      height: 300px;
+      border-radius: 0;
+      position: absolute;
+      /*left:50%;*/
+      /*top:50%;*/
+      /*transform:translate(-50%,-50%);*/
+     left: 320px;
+      top:380px;
+      transition: all 2s linear;
+      transform-origin: center -40px;
+    }
+    .dv:nth-child(2):hover div:nth-child(1){
+      transform: rotate(45deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(2){
+      transform: rotate(90deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(3){
+      transform: rotate(135deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(4){
+      transform: rotate(180deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(5){
+      transform: rotate(225deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(6){
+      transform: rotate(270deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(7){
+      transform: rotate(315deg);
+    }
+    .dv:nth-child(2):hover div:nth-child(8){
+        transform: rotate(360deg);
+      }
+
+  </style>
+</head>
+<body>
+<div class="dv">
+  <div class="transition">我</div>
+  <div class="transition">讨</div>
+  <div class="transition">厌</div>
+  <div class="transition">你</div>
+  <div class="transition">哦</div>
+  <div class="transition">王</div>
+  <div class="transition">玮</div>
+  <div class="transition">榕</div>
+</div>
+<div class="dv">
+  <div class="transition">我</div>
+  <div class="transition">讨</div>
+  <div class="transition">厌</div>
+  <div class="transition">你</div>
+  <div class="transition">哦</div>
+  <div class="transition">王</div>
+  <div class="transition">玮</div>
+  <div class="transition">榕</div>
+</div>
+
+<script>
+  var divs=document.querySelectorAll(".transition");
+  for(var i=0;i<divs.length ; i++){
+    if(i<=7){
+      divs[i].style.background="url('weirong/u"+i+".JPG')";
+      divs[i].style.backgroundSize="cover";
+    }
+    else{
+      divs[i].style.background="url('weirong/u"+(i-8)+".JPG')";
+      divs[i].style.backgroundSize="cover";
+    }
+
+  }
+</script>
+
+</body>
+</html>
